@@ -16,6 +16,33 @@
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
+    <!-- Affiliate Tracking -->
+    <script>
+        // Affiliate tracking for Canada market
+        const affiliateLinks = {
+            '888': 'https://track.888affiliates.com/click?pid=CANADIAN001&offer_id=12345',
+            'bet365': 'https://affiliates.bet365.com/tracking?affiliate=CANADIAN001&offer=casino',
+            'pokerstars': 'https://www.pokerstars.com/affiliate/tracking?id=CANADIAN001&campaign=casino',
+            'williamhill': 'https://affiliates.williamhill.com/track?aff=CANADIAN001&product=casino',
+            'betfair': 'https://affiliate.betfair.com/tracking?affiliate=CANADIAN001&channel=casino'
+        };
+        
+        function trackAffiliateClick(program) {
+            const link = affiliateLinks[program] || affiliateLinks['888'];
+            // Track click analytics
+            console.log('Affiliate click tracked:', program, 'for Canada market');
+            window.open(link, '_blank');
+            return false;
+        }
+        
+        function trackRegistration() {
+            // Track registration conversion
+            console.log('Registration tracked for Canada market');
+            window.location.href = affiliateLinks['888'];
+            return false;
+        }
+    </script>
+    
     <!-- Schema Markup -->
     <script type="application/ld+json">
     {
@@ -281,7 +308,7 @@
                 <li><a href="#bonuses">Bonuses</a></li>
                 <li><a href="#support">Support</a></li>
             </ul>
-            <a href="#register" class="cta-button">Join Now</a>
+            <a href="#register" class="cta-button" onclick="return trackRegistration();">Join Now</a>
         </nav>
     </header>
 
@@ -290,7 +317,7 @@
             <div class="container">
                 <h1>🍁 Welcome to Canada's Best Online Casino</h1>
                 <p>Experience true north gaming with CAD currency, Interac payments, and 24/7 bilingual support!</p>
-                <a href="#register" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;">Get Started - C$2000 Bonus</a>
+                <a href="#register" class="cta-button" style="font-size: 1.2rem; padding: 1rem 2rem;" onclick="return trackRegistration();">Get Started - C$2000 Bonus</a>
             </div>
         </section>
 
@@ -308,31 +335,37 @@
                             <div class="game-icon">🎰</div>
                             <h3>Canadian Slots</h3>
                             <p>Play the best Canadian slot games with progressive jackpots and bonus features</p>
+                            <a href="#" onclick="return trackAffiliateClick('888');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🃏</div>
                             <h3>Blackjack</h3>
                             <p>Classic 21 games with Canadian variations and live dealers</p>
+                            <a href="#" onclick="return trackAffiliateClick('bet365');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎡</div>
                             <h3>Roulette</h3>
                             <p>European, American, and Canadian-themed roulette tables</p>
+                            <a href="#" onclick="return trackAffiliateClick('pokerstars');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎲</div>
                             <h3>Live Casino</h3>
                             <p>Real dealers, real action - play with Canadian croupiers</p>
+                            <a href="#" onclick="return trackAffiliateClick('williamhill');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🎯</div>
                             <h3>Poker</h3>
                             <p>Texas Hold'em, Omaha, and Canadian Poker variations</p>
+                            <a href="#" onclick="return trackAffiliateClick('betfair');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                         <div class="game-card">
                             <div class="game-icon">🍁</div>
                             <h3>Specialty Games</h3>
                             <p>Keno, Bingo, and uniquely Canadian games</p>
+                            <a href="#" onclick="return trackAffiliateClick('888');" style="color: #DC143C; font-weight: bold;">Play Now →</a>
                         </div>
                     </div>
                 </div>
